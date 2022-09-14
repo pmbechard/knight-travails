@@ -1,0 +1,5 @@
+.header-container {
+  height: $headerHeight;
+  @include fCenter(row);
+  gap: 40px;
+}
