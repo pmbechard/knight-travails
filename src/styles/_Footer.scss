@@ -1,7 +1,7 @@
 .footer-container {
   height: $footerHeight;
   @include fCenter(row);
-  gap: 20px;
+  gap: 10px;
   width: 70vw;
   margin: 0 auto;
   font-family: $KaushanScript;
