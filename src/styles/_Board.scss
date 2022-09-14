@@ -1,0 +1,16 @@
+.board-container {
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  margin: 0 auto;
+}
+
+.tile {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+.dark {
+  background-color: $grey;
+}

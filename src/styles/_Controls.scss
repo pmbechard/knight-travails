@@ -1,7 +1,7 @@
 .controls-container {
   height: $controlsHeight;
   @include fCenter(row);
-  justify-content: space-around;
+  gap: 80px;
   width: 70vw;
   margin: 0 auto;
   font-family: $KaushanScript;
