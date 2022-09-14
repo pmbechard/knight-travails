@@ -2,4 +2,8 @@
   height: $headerHeight;
   @include fCenter(row);
   gap: 40px;
+
+  h1 {
+    font-family: $KaushanScript;
+  }
 }
