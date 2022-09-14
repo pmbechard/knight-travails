@@ -1,7 +1,7 @@
-import { getBoard } from './board';
-import { getControls } from './Controls';
-import { getFooter } from './footer';
-import { getHeader } from './Header';
+import { getBoard } from './components/Board';
+import { getControls } from './components/Controls';
+import { getFooter } from './components/Footer';
+import { getHeader } from './components/Header';
 import './style.css';
 
 getHeader();

@@ -1,4 +1,4 @@
-import githubIcon from './img/gh-logo.png';
+import githubIcon from '../img/gh-logo.png';
 
 export function getFooter() {
   const container = document.createElement('div');
