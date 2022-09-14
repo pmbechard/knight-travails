@@ -8,6 +8,9 @@ export function getFooter() {
   const ghIcon = document.createElement('img');
   ghIcon.src = githubIcon;
   container.appendChild(ghIcon);
+  ghIcon.addEventListener('click', () =>
+    window.open('https://github.com/pmbechard/knight-travails')
+  );
 
   const footerText = document.createElement('small');
   footerText.innerHTML = 'Peyton Bechard &copy; 2022';
