@@ -10,43 +10,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Controls.js":
-/*!*************************!*\
-  !*** ./src/Controls.js ***!
-  \*************************/
+/***/ "./src/components/Board.js":
+/*!*********************************!*\
+  !*** ./src/components/Board.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getControls\": () => (/* binding */ getControls)\n/* harmony export */ });\nfunction getControls() {\n  var container = document.createElement('div');\n  container.classList.add('controls-container');\n  document.body.appendChild(container);\n  var switchContainer = document.createElement('div');\n  switchContainer.classList.add('switch-container');\n  container.appendChild(switchContainer);\n  var btn = document.createElement('div');\n  btn.classList.add('switch');\n  btn.classList.add('r');\n  btn.id = 'switch';\n  switchContainer.appendChild(btn);\n  var checkbox = document.createElement('input');\n  checkbox.type = 'checkbox';\n  checkbox.classList.add('checkbox');\n  btn.appendChild(checkbox);\n  var knobs = document.createElement('div');\n  knobs.classList.add('knobs');\n  btn.appendChild(knobs);\n  var layer = document.createElement('div');\n  layer.classList.add('layer');\n  btn.appendChild(layer);\n  var resetBtn = document.createElement('button');\n  resetBtn.classList.add('reset-btn');\n  resetBtn.textContent = 'Reset';\n  container.appendChild(resetBtn);\n}\n\n//# sourceURL=webpack://knight-travails/./src/Controls.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getBoard\": () => (/* binding */ getBoard)\n/* harmony export */ });\nfunction getBoard() {\n  var container = document.createElement('div');\n  container.classList.add('board-container');\n  document.body.appendChild(container);\n\n  for (var i = 63; i >= 0; i--) {\n    var tile = document.createElement('div');\n    container.appendChild(tile);\n    var modifier = parseInt(i / 8) % 2 === 0 ? 1 : 0;\n    tile.classList.add('tile', \"\".concat((i + modifier) % 2 === 0 ? 'light' : 'dark'));\n    tile.id = \"tile-\".concat(7 - i % 8, \"-\").concat(parseInt(i / 8));\n  }\n}\n\n//# sourceURL=webpack://knight-travails/./src/components/Board.js?");
 
 /***/ }),
 
-/***/ "./src/Header.js":
-/*!***********************!*\
-  !*** ./src/Header.js ***!
-  \***********************/
+/***/ "./src/components/Controls.js":
+/*!************************************!*\
+  !*** ./src/components/Controls.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getHeader\": () => (/* binding */ getHeader)\n/* harmony export */ });\n/* harmony import */ var _logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../logo.png */ \"./logo.png\");\n\nfunction getHeader() {\n  var container = document.createElement('div');\n  container.classList.add('header-container');\n  document.body.appendChild(container);\n  var logoImg = document.createElement('img');\n  logoImg.src = _logo_png__WEBPACK_IMPORTED_MODULE_0__;\n  container.appendChild(logoImg);\n  var title = document.createElement('h1');\n  container.appendChild(title);\n  title.textContent = 'Knight Travails';\n}\n\n//# sourceURL=webpack://knight-travails/./src/Header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getControls\": () => (/* binding */ getControls)\n/* harmony export */ });\nfunction getControls() {\n  var container = document.createElement('div');\n  container.classList.add('controls-container');\n  document.body.appendChild(container);\n  var switchContainer = document.createElement('div');\n  switchContainer.classList.add('switch-container');\n  container.appendChild(switchContainer);\n  var btn = document.createElement('div');\n  btn.classList.add('switch');\n  btn.classList.add('r');\n  btn.id = 'switch';\n  switchContainer.appendChild(btn);\n  var checkbox = document.createElement('input');\n  checkbox.type = 'checkbox';\n  checkbox.classList.add('checkbox');\n  btn.appendChild(checkbox);\n  var knobs = document.createElement('div');\n  knobs.classList.add('knobs');\n  btn.appendChild(knobs);\n  var layer = document.createElement('div');\n  layer.classList.add('layer');\n  btn.appendChild(layer);\n  var resetBtn = document.createElement('button');\n  resetBtn.classList.add('reset-btn');\n  resetBtn.textContent = 'Reset';\n  container.appendChild(resetBtn);\n}\n\n//# sourceURL=webpack://knight-travails/./src/components/Controls.js?");
 
 /***/ }),
 
-/***/ "./src/board.js":
-/*!**********************!*\
-  !*** ./src/board.js ***!
-  \**********************/
+/***/ "./src/components/Footer.js":
+/*!**********************************!*\
+  !*** ./src/components/Footer.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getBoard\": () => (/* binding */ getBoard)\n/* harmony export */ });\nfunction getBoard() {\n  var container = document.createElement('div');\n  container.classList.add('board-container');\n  document.body.appendChild(container);\n\n  for (var i = 64; i > 0; i--) {\n    var tile = document.createElement('div');\n    tile.classList.add('tile', \"\".concat(i % 2 === 0 ? 'light' : 'dark'));\n    tile.id = \"tile-\".concat(i % 8, \"-\", '-');\n    container.appendChild(tile);\n  }\n}\n\n//# sourceURL=webpack://knight-travails/./src/board.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getFooter\": () => (/* binding */ getFooter)\n/* harmony export */ });\n/* harmony import */ var _img_gh_logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/gh-logo.png */ \"./src/img/gh-logo.png\");\n\nfunction getFooter() {\n  var container = document.createElement('div');\n  container.classList.add('footer-container');\n  document.body.appendChild(container);\n  var ghIcon = document.createElement('img');\n  ghIcon.src = _img_gh_logo_png__WEBPACK_IMPORTED_MODULE_0__;\n  container.appendChild(ghIcon);\n  ghIcon.addEventListener('click', function () {\n    return window.open('https://github.com/pmbechard/knight-travails');\n  });\n  var footerText = document.createElement('small');\n  footerText.innerHTML = 'Peyton Bechard &copy; 2022';\n  container.appendChild(footerText);\n}\n\n//# sourceURL=webpack://knight-travails/./src/components/Footer.js?");
 
 /***/ }),
 
-/***/ "./src/footer.js":
-/*!***********************!*\
-  !*** ./src/footer.js ***!
-  \***********************/
+/***/ "./src/components/Header.js":
+/*!**********************************!*\
+  !*** ./src/components/Header.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getFooter\": () => (/* binding */ getFooter)\n/* harmony export */ });\n/* harmony import */ var _img_gh_logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/gh-logo.png */ \"./src/img/gh-logo.png\");\n\nfunction getFooter() {\n  var container = document.createElement('div');\n  container.classList.add('footer-container');\n  document.body.appendChild(container);\n  var ghIcon = document.createElement('img');\n  ghIcon.src = _img_gh_logo_png__WEBPACK_IMPORTED_MODULE_0__;\n  container.appendChild(ghIcon);\n  var footerText = document.createElement('small');\n  footerText.innerHTML = 'Peyton Bechard &copy; 2022';\n  container.appendChild(footerText);\n}\n\n//# sourceURL=webpack://knight-travails/./src/footer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getHeader\": () => (/* binding */ getHeader)\n/* harmony export */ });\n/* harmony import */ var _logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../logo.png */ \"./logo.png\");\n\nfunction getHeader() {\n  var container = document.createElement('div');\n  container.classList.add('header-container');\n  document.body.appendChild(container);\n  var logoImg = document.createElement('img');\n  logoImg.src = _logo_png__WEBPACK_IMPORTED_MODULE_0__;\n  container.appendChild(logoImg);\n  var title = document.createElement('h1');\n  container.appendChild(title);\n  title.textContent = 'Knight Travails';\n}\n\n//# sourceURL=webpack://knight-travails/./src/components/Header.js?");
 
 /***/ }),
 
@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ \"./src/board.js\");\n/* harmony import */ var _Controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Controls */ \"./src/Controls.js\");\n/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer */ \"./src/footer.js\");\n/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ \"./src/Header.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\n\n(0,_Header__WEBPACK_IMPORTED_MODULE_3__.getHeader)();\n(0,_Controls__WEBPACK_IMPORTED_MODULE_1__.getControls)();\n(0,_board__WEBPACK_IMPORTED_MODULE_0__.getBoard)();\n(0,_footer__WEBPACK_IMPORTED_MODULE_2__.getFooter)();\n\n//# sourceURL=webpack://knight-travails/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Board */ \"./src/components/Board.js\");\n/* harmony import */ var _components_Controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Controls */ \"./src/components/Controls.js\");\n/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Footer */ \"./src/components/Footer.js\");\n/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Header */ \"./src/components/Header.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\n\n(0,_components_Header__WEBPACK_IMPORTED_MODULE_3__.getHeader)();\n(0,_components_Controls__WEBPACK_IMPORTED_MODULE_1__.getControls)();\n(0,_components_Board__WEBPACK_IMPORTED_MODULE_0__.getBoard)();\n(0,_components_Footer__WEBPACK_IMPORTED_MODULE_2__.getFooter)();\n\n//# sourceURL=webpack://knight-travails/./src/index.js?");
 
 /***/ }),
 
