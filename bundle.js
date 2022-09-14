@@ -136,7 +136,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \******************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"441a135a9b117c2b8efc.png\";\n\n//# sourceURL=webpack://knight-travails/./logo.png?");
+eval("module.exports = __webpack_require__.p + \"88983a25115463181cd0.png\";\n\n//# sourceURL=webpack://knight-travails/./logo.png?");
 
 /***/ })
 
