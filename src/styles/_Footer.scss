@@ -1,0 +1,23 @@
+.footer-container {
+  height: $footerHeight;
+  @include fCenter(row);
+  gap: 20px;
+  width: 70vw;
+  margin: 0 auto;
+  font-family: $KaushanScript;
+
+  img {
+    height: 20px;
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.7;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+}
