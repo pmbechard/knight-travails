@@ -1,5 +1,6 @@
+import { getHeader } from './header';
 import './style.css';
 
-const title = document.createElement('h1');
-document.body.appendChild(title);
-title.textContent = 'Knight Travails';
+// TODO: replace icon in directory and header
+
+getHeader();
