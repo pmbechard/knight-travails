@@ -18,9 +18,8 @@
   .modal-window {
     position: absolute;
     top: calc(100vh - 90%);
-    right: calc(100vw - 70%);
-    // height: 50%;
-    width: 40%;
+    right: calc(50vw - calc(max(40%, 400px) / 2));
+    width: max(40%, 400px);
     background-color: $blue;
     border-radius: 12px;
     border: 10px solid $bg;

@@ -1,0 +1,21 @@
+@media only screen and (max-width: 400px) {
+  .board-container {
+    max-width: 320px;
+    max-height: 320px;
+    margin: 10px auto;
+
+    .tile {
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .modal-container .modal-window {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+}
