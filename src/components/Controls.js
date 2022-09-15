@@ -37,6 +37,7 @@ export function getControls() {
   startBtn.classList.add('btn');
   startBtn.id = 'start-btn';
   startBtn.textContent = 'Start';
+  startBtn.disabled = true;
   container.appendChild(startBtn);
 
   const resetBtn = document.createElement('button');
@@ -50,6 +51,7 @@ export function getControls() {
       tile.classList.remove('disabled');
       tile.innerHTML = '';
       markerState.state = false;
+      startBtn.disabled = true;
     }
   });
 }
