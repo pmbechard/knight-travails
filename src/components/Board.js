@@ -1,5 +1,7 @@
-import knightHoverIcon from '../img/knight-hover.png';
+import locationIcon from '../img/location.png';
 import knightPlacedIcon from '../img/knight-placed.png';
+import finishIcon from '../img/finish.png';
+import { markerState } from '../index.js';
 
 export function getBoard() {
   const container = document.createElement('div');
@@ -16,17 +18,43 @@ export function getBoard() {
     );
     tile.id = `tile-${7 - (i % 8)}-${parseInt(i / 8)}`;
 
-    const knightHoverImg = document.createElement('img');
-    knightHoverImg.src = knightHoverIcon;
-    knightHoverImg.id = 'knight-hover-img';
-    knightHoverImg.classList.add('knight-icon');
+    const locationImg = document.createElement('img');
+    locationImg.src = locationIcon;
+    locationImg.id = 'location-img';
+    locationImg.classList.add('board-icon');
+
+    const knightPlacedImg = document.createElement('img');
+    knightPlacedImg.src = knightPlacedIcon;
+    knightPlacedImg.id = 'knight-placed-img';
+    knightPlacedImg.classList.add('board-icon');
+
+    const finishImg = document.createElement('img');
+    finishImg.src = finishIcon;
+    finishImg.id = 'finish-img';
+    finishImg.classList.add('board-icon');
 
     tile.addEventListener('mouseover', () => {
-      tile.appendChild(knightHoverImg);
+      if (markerState.state === null) return;
+      if (tile.classList.contains('disabled')) return;
+      tile.appendChild(locationImg);
     });
 
     tile.addEventListener('mouseleave', () => {
-      knightHoverImg.remove();
+      locationImg.remove();
+    });
+
+    tile.addEventListener('click', () => {
+      if (markerState.state === null) return;
+      if (tile.classList.contains('disabled')) return;
+      else if (markerState.state === false) {
+        tile.appendChild(knightPlacedImg);
+        tile.classList.add('disabled');
+      } else if (markerState.state === true) {
+        tile.appendChild(finishImg);
+        tile.classList.add('disabled');
+      }
+      locationImg.remove();
+      markerState.state = markerState.state === false ? true : null;
     });
   }
 }

@@ -1,3 +1,5 @@
+import { markerState } from '..';
+
 export function getControls() {
   const container = document.createElement('div');
   container.classList.add('controls-container');
@@ -16,6 +18,8 @@ export function getControls() {
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.classList.add('checkbox');
+  checkbox.id = 'to-from-switch';
+  checkbox.checked = markerState.state;
   btn.appendChild(checkbox);
 
   const knobs = document.createElement('div');
