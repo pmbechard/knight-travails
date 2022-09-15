@@ -9,6 +9,8 @@ import { getHelpModal } from './components/HelpModal';
 
 export const markerState = new Marker(false);
 
+// FIXME: start btn hover and active properties show when btn is disabled
+
 getHeader();
 getControls();
 getBoard();

@@ -19,14 +19,21 @@
 }
 
 #start-btn {
+  &:disabled {
+    cursor: default;
+  }
   &:hover {
-    color: $bgWhite;
-    opacity: 1;
-    transform: scale(1.05);
-    background-color: $green;
+    &:not([disabled]) {
+      color: $bgWhite;
+      opacity: 1;
+      transform: scale(1.05);
+      background-color: $green;
+    }
   }
   &:active {
-    opacity: 0.6;
+    &:not([disabled]) {
+      opacity: 0.6;
+    }
   }
 }
 #reset-btn {
