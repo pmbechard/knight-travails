@@ -18,6 +18,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: #ebf7fc;
+  border-radius: 100px;
 }
 
 .switch {
@@ -44,7 +46,6 @@
   padding: 0;
   margin: 0;
   opacity: 0;
-  cursor: pointer;
   z-index: 3;
 }
 
@@ -64,7 +65,7 @@
 }
 
 #switch .knobs:before {
-  content: "Start";
+  content: "from";
   position: absolute;
   top: 4px;
   left: 4px;
@@ -92,7 +93,7 @@
 }
 
 #switch .checkbox:checked + .knobs:before {
-  content: "End";
+  content: "to";
   background-color: #f44336;
   transform: rotateZ(180deg);
 }
@@ -114,7 +115,7 @@
   font-family: "Kaushan Script", cursive;
 }
 
-.reset-btn {
+.btn {
   background-color: #ebf7fc;
   border-radius: 100px;
   border: none;
@@ -124,14 +125,25 @@
   transition: all 0.1s ease-in-out;
   font-family: "Kaushan Script", cursive;
 }
-.reset-btn:hover {
-  background-color: #f44336;
+
+#start-btn:hover {
   color: #ebf7fc;
-  opacity: 0.6;
-  transform: scale(1.05);
-}
-.reset-btn:active {
   opacity: 1;
+  transform: scale(1.05);
+  background-color: #0bac38;
+}
+#start-btn:active {
+  opacity: 0.6;
+}
+
+#reset-btn:hover {
+  color: #ebf7fc;
+  opacity: 1;
+  transform: scale(1.05);
+  background-color: #f44336;
+}
+#reset-btn:active {
+  opacity: 0.6;
 }
 
 .board-container {
@@ -167,6 +179,7 @@
 .knight-icon {
   height: 40px;
   width: 40px;
+  background-color: transparent;
 }
 
 .footer-container {
@@ -197,4 +210,5 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #ddd;
 }/*# sourceMappingURL=style.css.map */

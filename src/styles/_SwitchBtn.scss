@@ -5,6 +5,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: $bgWhite;
+  border-radius: 100px;
 }
 
 .switch {
@@ -31,7 +33,6 @@
   padding: 0;
   margin: 0;
   opacity: 0;
-  cursor: pointer;
   z-index: 3;
 }
 
@@ -51,7 +52,7 @@
 }
 
 #switch .knobs:before {
-  content: 'Start';
+  content: 'from';
   position: absolute;
   top: 4px;
   left: 4px;
@@ -79,7 +80,7 @@
 }
 
 #switch .checkbox:checked + .knobs:before {
-  content: 'End';
+  content: 'to';
   background-color: $red;
   transform: rotateZ(180deg);
 }

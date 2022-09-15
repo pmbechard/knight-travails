@@ -26,8 +26,19 @@ export function getControls() {
   layer.classList.add('layer');
   btn.appendChild(layer);
 
+  const startBtn = document.createElement('button');
+  startBtn.classList.add('btn');
+  startBtn.id = 'start-btn';
+  startBtn.textContent = 'Start';
+  container.appendChild(startBtn);
+
   const resetBtn = document.createElement('button');
-  resetBtn.classList.add('reset-btn');
+  resetBtn.classList.add('btn');
+  resetBtn.id = 'reset-btn';
   resetBtn.textContent = 'Reset';
   container.appendChild(resetBtn);
+
+  checkbox.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
 }
