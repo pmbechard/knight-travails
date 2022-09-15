@@ -11,96 +11,74 @@
   font-family: "Kaushan Script", cursive;
 }
 
-.knobs,
-.layer {
+.switch-button {
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 120px;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  padding-right: 80px;
+  position: relative;
+}
+.switch-button:before {
+  content: "to";
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
+  right: 0;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+}
+.switch-button-checkbox {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
   left: 0;
-  background-color: #ebf7fc;
-  border-radius: 100px;
-}
-
-.switch {
-  position: relative;
-  top: 50%;
-  width: 74px;
-  height: 36px;
-  overflow: hidden;
-}
-
-.switch.r,
-.switch.r .layer {
-  border-radius: 100px;
-}
-
-.switch.b2 {
-  border-radius: 2px;
-}
-
-.checkbox {
-  position: relative;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0;
   opacity: 0;
-  z-index: 3;
-}
-
-.knobs {
   z-index: 2;
 }
-
-.layer {
+.switch-button-checkbox:checked + .switch-button-label:before {
+  transform: translateX(60px);
+  transition: transform 300ms linear;
+}
+.switch-button-checkbox + .switch-button-label {
+  position: relative;
+  padding: 5px 0;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.switch-button-checkbox + .switch-button-label:before {
+  content: "";
+  background: #2096f3;
+  opacity: 0.6;
+  height: 100%;
   width: 100%;
-  background-color: #ebf7fc;
-  transition: 0.3s ease all;
-  z-index: 1;
-}
-
-#switch {
-  overflow: visible;
-}
-
-#switch .knobs:before {
-  content: "from";
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 20px;
-  height: 10px;
-  color: #fff;
-  font-size: 9px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 1;
-  padding: 9px 4px;
-  background-color: #0bac38;
-  border-radius: 50%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+.switch-button-checkbox + .switch-button-label .switch-button-label-span {
+  position: relative;
 }
 
-#switch .layer,
-#switch .knobs,
-#switch .knobs:before {
-  transform: rotateZ(0);
-  transition: 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-}
-
-#switch .checkbox:checked + .knobs {
-  transform: rotateZ(-180deg);
-}
-
-#switch .checkbox:checked + .knobs:before {
-  content: "to";
-  background-color: #f44336;
-  transform: rotateZ(180deg);
-}
-
-#switch .checkbox:checked ~ .layer {
-  background-color: #ebf7fc;
-  transform: rotateZ(180deg);
+span {
+  background: transparent;
 }
 
 .controls-container {

@@ -8,13 +8,7 @@ export class Marker {
   }
   set state(state) {
     this._state = state;
-    this.#updateCheckbox();
     this.#updateStartBtn();
-  }
-
-  #updateCheckbox() {
-    const checkbox = document.getElementById('to-from-switch');
-    if (this._state !== null) checkbox.checked = this._state;
   }
 
   #updateStartBtn() {
