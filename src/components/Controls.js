@@ -1,3 +1,4 @@
+import helpIcon from '../img/help.png';
 import { markerState } from '..';
 
 export function getControls() {
@@ -21,6 +22,9 @@ export function getControls() {
   checkbox.id = 'to-from-switch';
   checkbox.checked = markerState.state;
   btn.appendChild(checkbox);
+  checkbox.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
 
   const knobs = document.createElement('div');
   knobs.classList.add('knobs');
@@ -50,7 +54,11 @@ export function getControls() {
     }
   });
 
-  checkbox.addEventListener('click', (e) => {
-    e.preventDefault();
-  });
+  const helpBtn = document.createElement('button');
+  helpBtn.classList.add('btn');
+  helpBtn.id = 'help-btn';
+  const helpImg = document.createElement('img');
+  helpImg.src = helpIcon;
+  helpBtn.appendChild(helpImg);
+  container.appendChild(helpBtn);
 }
