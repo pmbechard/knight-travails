@@ -1,4 +1,5 @@
 import githubIcon from '../img/gh-logo.png';
+import helpIcon from '../img/help.png';
 
 export function getFooter() {
   const container = document.createElement('div');
@@ -15,4 +16,8 @@ export function getFooter() {
   const footerText = document.createElement('small');
   footerText.innerHTML = 'Peyton Bechard &copy; 2022';
   container.appendChild(footerText);
+
+  const helpImg = document.createElement('img');
+  helpImg.src = helpIcon;
+  container.appendChild(helpImg);
 }

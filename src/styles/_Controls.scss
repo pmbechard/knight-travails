@@ -40,23 +40,3 @@
     opacity: 0.6;
   }
 }
-
-#help-btn {
-  @include fCenter();
-
-  img {
-    height: 30px;
-    width: 30px;
-    background-color: transparent;
-  }
-
-  &:hover {
-    color: $bgWhite;
-    opacity: 1;
-    transform: scale(1.05);
-    background-color: $blue;
-  }
-  &:active {
-    opacity: 0.6;
-  }
-}

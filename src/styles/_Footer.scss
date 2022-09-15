@@ -9,6 +9,7 @@
   img {
     height: 20px;
     transition: $transition;
+    background-color: transparent;
 
     &:hover {
       opacity: 0.7;

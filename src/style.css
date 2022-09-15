@@ -146,27 +146,6 @@
   opacity: 0.6;
 }
 
-#help-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-#help-btn img {
-  height: 30px;
-  width: 30px;
-  background-color: transparent;
-}
-#help-btn:hover {
-  color: #ebf7fc;
-  opacity: 1;
-  transform: scale(1.05);
-  background-color: #2096f3;
-}
-#help-btn:active {
-  opacity: 0.6;
-}
-
 .board-container {
   width: 400px;
   display: grid;
@@ -217,6 +196,7 @@
 .footer-container img {
   height: 20px;
   transition: all 0.1s ease-in-out;
+  background-color: transparent;
 }
 .footer-container img:hover {
   opacity: 0.7;

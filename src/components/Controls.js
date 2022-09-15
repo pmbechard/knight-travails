@@ -1,4 +1,3 @@
-import helpIcon from '../img/help.png';
 import { markerState } from '..';
 
 export function getControls() {
@@ -53,12 +52,4 @@ export function getControls() {
       markerState.state = false;
     }
   });
-
-  const helpBtn = document.createElement('button');
-  helpBtn.classList.add('btn');
-  helpBtn.id = 'help-btn';
-  const helpImg = document.createElement('img');
-  helpImg.src = helpIcon;
-  helpBtn.appendChild(helpImg);
-  container.appendChild(helpBtn);
 }
