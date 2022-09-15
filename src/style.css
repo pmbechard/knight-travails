@@ -228,13 +228,42 @@
 }
 .modal-container .modal-window {
   position: absolute;
-  top: calc(100vh - 75%);
+  top: calc(100vh - 90%);
   right: calc(100vw - 70%);
-  height: 50%;
   width: 40%;
   background-color: #2096f3;
   border-radius: 12px;
-  border: 5px solid #ebf7fc;
+  border: 10px solid #ddd;
+  color: #ebf7fc;
+  font-family: "Kaushan Script", cursive;
+  padding: 20px;
+}
+.modal-container .modal-window h1 {
+  background-color: transparent;
+  text-align: center;
+  width: 100%;
+}
+.modal-container .modal-window h2,
+.modal-container .modal-window p,
+.modal-container .modal-window u,
+.modal-container .modal-window em {
+  background-color: transparent;
+}
+.modal-container .modal-window h2 {
+  padding: 20px 0 10px;
+}
+.modal-container .modal-window .try-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  background-color: transparent;
+  margin-top: 20px;
+}
+.modal-container .modal-window .try-btn-container button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 * {
