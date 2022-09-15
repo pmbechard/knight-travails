@@ -73,7 +73,7 @@
   align-items: center;
   flex-direction: row;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 .tile:hover {
   transform: scale(1.1);
