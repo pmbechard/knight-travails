@@ -20,4 +20,8 @@ export function getFooter() {
   const helpImg = document.createElement('img');
   helpImg.src = helpIcon;
   container.appendChild(helpImg);
+  helpImg.addEventListener('click', () => {
+    const modal = document.getElementById('modal-container');
+    modal.style.display = 'block';
+  });
 }
