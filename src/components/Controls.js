@@ -41,6 +41,14 @@ export function getControls() {
   resetBtn.id = 'reset-btn';
   resetBtn.textContent = 'Reset';
   container.appendChild(resetBtn);
+  resetBtn.addEventListener('click', () => {
+    const tiles = document.querySelectorAll('.tile');
+    for (let tile of tiles) {
+      tile.classList.remove('disabled');
+      tile.innerHTML = '';
+      markerState.state = false;
+    }
+  });
 
   checkbox.addEventListener('click', (e) => {
     e.preventDefault();
