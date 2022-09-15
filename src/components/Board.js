@@ -1,3 +1,6 @@
+import knightHoverIcon from '../img/knight-hover.png';
+import knightPlacedIcon from '../img/knight-placed.png';
+
 export function getBoard() {
   const container = document.createElement('div');
   container.classList.add('board-container');
@@ -12,5 +15,18 @@ export function getBoard() {
       `${(i + modifier) % 2 === 0 ? 'light' : 'dark'}`
     );
     tile.id = `tile-${7 - (i % 8)}-${parseInt(i / 8)}`;
+
+    const knightHoverImg = document.createElement('img');
+    knightHoverImg.src = knightHoverIcon;
+    knightHoverImg.id = 'knight-hover-img';
+    knightHoverImg.classList.add('knight-icon');
+
+    tile.addEventListener('mouseover', () => {
+      tile.appendChild(knightHoverImg);
+    });
+
+    tile.addEventListener('mouseleave', () => {
+      knightHoverImg.remove();
+    });
   }
 }

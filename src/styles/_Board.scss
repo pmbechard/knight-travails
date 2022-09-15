@@ -10,8 +10,24 @@
   height: 50px;
   width: 50px;
   border: 1px solid black;
+  @include fCenter();
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .dark {
   background-color: $grey;
+}
+
+.light {
+  background-color: $bgWhite;
+}
+
+.knight-icon {
+  height: 40px;
+  width: 40px;
 }
