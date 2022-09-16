@@ -34,7 +34,7 @@ export function getHelpModal() {
 
   const howParagraph = document.createElement('p');
   howParagraph.innerHTML =
-    '1. Choose a spot on the chess board to place our knight. <br> 2. Choose a spot on the chess board to place the destination you want him to reach. <br> 3. Click the <u>Start</u> button to begin! <br><br> Press <u>Restart</u> at any time to clear the board.';
+    '1. Choose a spot on the chess board to place our knight. <br> 2. Choose a spot on the chess board to place the destination you want him to reach. <br> 3. Click the <u>Start</u> button to begin! <br><br> Press <u>Reset</u> at any time to clear the board.';
   modalWindow.appendChild(howParagraph);
 
   const btnContainer = document.createElement('div');

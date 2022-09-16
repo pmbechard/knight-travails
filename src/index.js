@@ -12,7 +12,6 @@ export const markerState = new Marker(false);
 // TODO: Add algorithm with tests
 // TODO: Animate algorithm results
 // TODO: Update reset function
-// TODO: Add _MediaQueries.scss
 
 getHeader();
 getControls();
