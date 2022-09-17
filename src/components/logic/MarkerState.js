@@ -30,9 +30,11 @@ export class Marker {
   }
 
   #parseCoords(loc) {
+    if (!loc) return;
     let coords = loc.id;
     coords = coords.split('-');
     coords = coords.slice(1);
+    coords = coords.map((coord) => parseInt(coord));
     return coords;
   }
 

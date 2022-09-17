@@ -1,3 +1,4 @@
+import { run } from '../components/logic/Run';
 import { markerState } from '..';
 
 export function getControls() {
@@ -11,6 +12,7 @@ export function getControls() {
   startBtn.textContent = 'Start';
   startBtn.disabled = true;
   container.appendChild(startBtn);
+  startBtn.addEventListener('click', run);
 
   const resetBtn = document.createElement('button');
   resetBtn.classList.add('btn');
@@ -23,6 +25,8 @@ export function getControls() {
       tile.classList.remove('disabled');
       tile.innerHTML = '';
       markerState.state = false;
+      markerState.start = null;
+      markerState.end = null;
       startBtn.disabled = true;
     }
   });
