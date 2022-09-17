@@ -1,5 +1,5 @@
 import locationIcon from '../img/location.png';
-import knightPlacedIcon from '../img/knight-placed.png';
+import { knightFactory } from './logic/KnightFactory';
 import finishIcon from '../img/finish.png';
 import { markerState } from '../index.js';
 
@@ -23,11 +23,6 @@ export function getBoard() {
     locationImg.id = 'location-img';
     locationImg.classList.add('board-icon');
 
-    const knightPlacedImg = document.createElement('img');
-    knightPlacedImg.src = knightPlacedIcon;
-    knightPlacedImg.id = 'knight-placed-img';
-    knightPlacedImg.classList.add('board-icon');
-
     const finishImg = document.createElement('img');
     finishImg.src = finishIcon;
     finishImg.id = 'finish-img';
@@ -47,7 +42,7 @@ export function getBoard() {
       if (markerState.state === null) return;
       if (tile.classList.contains('disabled')) return;
       else if (markerState.state === false) {
-        tile.appendChild(knightPlacedImg);
+        tile.appendChild(knightFactory());
         tile.classList.add('disabled');
         markerState.start = tile;
       } else if (markerState.state === true) {
