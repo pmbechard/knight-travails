@@ -10,6 +10,7 @@ export function run() {
   //    mark each spot along the way include a number at each new point
 
   let currentPoint = markerState.start;
+  document.getElementById('start-btn').disabled = true;
 
   for (let point = 0; point < path.length; point++) {
     let difference = [
