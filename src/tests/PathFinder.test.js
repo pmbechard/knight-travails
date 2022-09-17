@@ -1,7 +1,7 @@
-import { pathfinder, getChildren } from '../PathFinder';
+import { compareArrays, pathfinder, getChildren, result } from '../PathFinder';
 
 describe('Pathfinder algorithm', () => {
-  test('getChildren() returns all children for the specified node', () => {
+  test('getChildren()', () => {
     expect(getChildren([0, 0])).toStrictEqual([
       [1, 2],
       [2, 1],
@@ -54,19 +54,30 @@ describe('Pathfinder algorithm', () => {
     ]);
   });
 
-  test.skip('produces the expected result', () => {
-    expect(pathfinder([0, 0], [1, 2])).toBe([
+  test('compareArrays()', () => {
+    expect(compareArrays([1, 2], [1, 2])).toBe(true);
+    expect(compareArrays(1, [1, 2])).toBe(false);
+    expect(compareArrays([1, 2], [1, 1])).toBe(false);
+    expect(compareArrays([1], [1, 1])).toBe(false);
+  });
+
+  test('pathfinder()', () => {
+    expect(pathfinder([0, 0], [0, 0])).toStrictEqual([[0, 0]]);
+
+    expect(pathfinder([0, 0], [1, 2])).toStrictEqual([
       [0, 0],
       [1, 2],
     ]);
-    expect(pathfinder([0, 0], [3, 3])).toBe([
+
+    expect(pathfinder([0, 0], [3, 3])).toStrictEqual([
       [0, 0],
       [1, 2],
       [3, 3],
     ]);
-    expect(pathfinder([3, 3], [0, 0])).toBe([
+
+    expect(pathfinder([3, 3], [0, 0])).toStrictEqual([
       [3, 3],
-      [1, 2],
+      [2, 1],
       [0, 0],
     ]);
   });
