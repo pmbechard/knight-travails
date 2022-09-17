@@ -9,13 +9,8 @@ import './style.css';
 
 export const markerState = new Marker(false);
 
-// TODO: Animate algorithm results
-// TODO: Update reset function
-
 getHeader();
 getControls();
 getBoard();
 getFooter();
 getHelpModal();
-
-
