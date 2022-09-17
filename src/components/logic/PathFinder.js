@@ -9,19 +9,15 @@ class Node {
 export function pathfinder(from, to, prev = null) {
   let current = new Node(from, prev, getChildren(from));
   let queue = [];
-  let visited = [];
   queue.push(current);
   let node;
 
   do {
     node = queue[0];
     queue = queue.slice(1);
-    visited.push(node.coords);
     if (compareArrays(node.coords, to)) break;
     node.children.forEach((child) => {
-      if (!compareArrayTo2dArray(child, visited)) {
-        queue.push(new Node(child, node, getChildren(child)));
-      }
+      queue.push(new Node(child, node, getChildren(child)));
     });
   } while (queue.length > 0);
   return destructureNode(node);
@@ -41,6 +37,12 @@ export function getChildren(node) {
   return children;
 }
 
+export function compareArrays(a, b) {
+  if (!Array.isArray(a) || !Array.isArray(b)) return false;
+  if (a.length !== b.length) return false;
+  return a.every((val, index) => val === b[index]);
+}
+
 function destructureNode(node) {
   let output = [];
   while (node) {
@@ -48,17 +50,4 @@ function destructureNode(node) {
     node = node.prev;
   }
   return output.reverse();
-}
-
-export function compareArrays(a, b) {
-  if (!Array.isArray(a) || !Array.isArray(b)) return false;
-  if (a.length !== b.length) return false;
-  return a.every((val, index) => val === b[index]);
-}
-
-export function compareArrayTo2dArray(arr, arr2d) {
-  arr2d.forEach((item) => {
-    if (compareArrays(item, arr)) return true;
-  });
-  return false;
 }

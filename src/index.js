@@ -4,12 +4,11 @@ import { getBoard } from './components/Board';
 import { getFooter } from './components/Footer';
 import { getHelpModal } from './components/HelpModal';
 
-import { Marker } from './data/MarkerState';
+import { Marker } from './components/logic/MarkerState';
 import './style.css';
 
 export const markerState = new Marker(false);
 
-// TODO: Add algorithm with tests
 // TODO: Animate algorithm results
 // TODO: Update reset function
 
@@ -18,3 +17,5 @@ getControls();
 getBoard();
 getFooter();
 getHelpModal();
+
+

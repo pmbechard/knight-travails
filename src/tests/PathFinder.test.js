@@ -1,4 +1,8 @@
-import { compareArrays, pathfinder, getChildren, result } from '../PathFinder';
+import {
+  compareArrays,
+  pathfinder,
+  getChildren,
+} from '../components/logic/PathFinder';
 
 describe('Pathfinder algorithm', () => {
   test('getChildren()', () => {

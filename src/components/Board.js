@@ -49,9 +49,11 @@ export function getBoard() {
       else if (markerState.state === false) {
         tile.appendChild(knightPlacedImg);
         tile.classList.add('disabled');
+        markerState.start = tile;
       } else if (markerState.state === true) {
         tile.appendChild(finishImg);
         tile.classList.add('disabled');
+        markerState.end = tile;
       }
       locationImg.remove();
       markerState.state = markerState.state === false ? true : null;
