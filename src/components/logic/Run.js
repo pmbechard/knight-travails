@@ -1,35 +1,56 @@
 import { pathfinder } from './PathFinder';
 import { markerState } from '../..';
-import { knightFactory } from './KnightFactory';
+import pathIcon from '../../img/path.png';
 
 export function run() {
-  const path = pathfinder(markerState.start, markerState.end).slice(1);
-  // TODO:
-  // for each value in path
-  //    animate the knight to move to that value
-  //    mark each spot along the way include a number at each new point
-
-  let currentPoint = markerState.start;
   document.getElementById('start-btn').disabled = true;
+  const moves = pathfinder(markerState.start, markerState.end);
+  const path = generatePath(moves);
+  animatePath(path);
+}
 
-  for (let point = 0; point < path.length; point++) {
-    let difference = [
-      path[point][0] - currentPoint[0],
-      path[point][1] - currentPoint[1],
-    ];
+function generatePath(moves) {
+  let prevMove = moves[0];
+  let currentMove;
+  let path = [prevMove];
 
-    console.log(difference);
-    console.log(point + 1);
+  for (let i = 1; i < moves.length; i++) {
+    currentMove = moves[i];
 
-    let tile = document.getElementById(
-      `tile-${[path[point][0]]}-${path[point][1]}`
-    );
-    if (path[point] !== path[path.length - 1]) {
-      tile.innerHTML = '';
-      tile.appendChild(knightFactory());
+    let x = prevMove[0];
+    while (x !== currentMove[0]) {
+      x < currentMove[0] && x++;
+      x > currentMove[0] && x--;
+      path.push([x, prevMove[1]]);
     }
-    currentPoint = path[point];
-  }
 
-  // console.log(path);
+    let y = prevMove[1];
+    while (y !== currentMove[1]) {
+      y < currentMove[1] && y++;
+      y > currentMove[1] && y--;
+      path.push([x, y]);
+    }
+
+    prevMove = currentMove;
+  }
+  return path;
+}
+
+async function animatePath(path) {
+  for (let i = 1; i < path.length; i++) {
+    const tile = document.getElementById(`tile-${path[i][0]}-${path[i][1]}`);
+    if (i !== 0 && i % 3 === 0) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      const moveMarker = document.createElement('p');
+      moveMarker.textContent = `${i / 3}`;
+      moveMarker.classList.add('move-marker');
+      tile.appendChild(moveMarker);
+    } else {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      const pathMarker = document.createElement('img');
+      pathMarker.classList.add('board-icon', 'path-marker');
+      pathMarker.src = pathIcon;
+      tile.appendChild(pathMarker);
+    }
+  }
 }

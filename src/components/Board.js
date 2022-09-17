@@ -1,5 +1,5 @@
 import locationIcon from '../img/location.png';
-import { knightFactory } from './logic/KnightFactory';
+import knightIcon from '../img/knight.png';
 import finishIcon from '../img/finish.png';
 import { markerState } from '../index.js';
 
@@ -42,7 +42,11 @@ export function getBoard() {
       if (markerState.state === null) return;
       if (tile.classList.contains('disabled')) return;
       else if (markerState.state === false) {
-        tile.appendChild(knightFactory());
+        const knightImg = document.createElement('img');
+        knightImg.src = knightIcon;
+        knightImg.id = 'knight--img';
+        knightImg.classList.add('board-icon');
+        tile.appendChild(knightImg);
         tile.classList.add('disabled');
         markerState.start = tile;
       } else if (markerState.state === true) {
