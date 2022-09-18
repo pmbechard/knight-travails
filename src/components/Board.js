@@ -58,6 +58,7 @@ function tileClickHandler(tile) {
     tile.classList.add('disabled');
     markerState.end = tile;
   }
-  document.getElementById('location-img').remove();
+  const locationImg = document.getElementById('location-img');
+  if (locationImg) locationImg.remove();
   markerState.state = markerState.state === false ? true : null;
 }
