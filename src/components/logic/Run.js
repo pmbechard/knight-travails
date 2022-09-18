@@ -4,6 +4,7 @@ import pathIcon from '../../img/path.png';
 
 export function run() {
   document.getElementById('start-btn').disabled = true;
+  document.getElementById('reset-btn').disabled = true;
   const moves = pathfinder(markerState.start, markerState.end);
   const path = generatePath(moves);
   animatePath(path);
@@ -53,4 +54,5 @@ async function animatePath(path) {
       tile.appendChild(pathMarker);
     }
   }
+  document.getElementById('reset-btn').disabled = false;
 }
