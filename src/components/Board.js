@@ -23,11 +23,6 @@ export function getBoard() {
     locationImg.id = 'location-img';
     locationImg.classList.add('board-icon');
 
-    const finishImg = document.createElement('img');
-    finishImg.src = finishIcon;
-    finishImg.id = 'finish-img';
-    finishImg.classList.add('board-icon');
-
     tile.addEventListener('mouseover', () => {
       if (markerState.state === null) return;
       if (tile.classList.contains('disabled')) return;
@@ -38,24 +33,31 @@ export function getBoard() {
       locationImg.remove();
     });
 
-    tile.addEventListener('click', () => {
-      if (markerState.state === null) return;
-      if (tile.classList.contains('disabled')) return;
-      else if (markerState.state === false) {
-        const knightImg = document.createElement('img');
-        knightImg.src = knightIcon;
-        knightImg.id = 'knight--img';
-        knightImg.classList.add('board-icon');
-        tile.appendChild(knightImg);
-        tile.classList.add('disabled');
-        markerState.start = tile;
-      } else if (markerState.state === true) {
-        tile.appendChild(finishImg);
-        tile.classList.add('disabled');
-        markerState.end = tile;
-      }
-      locationImg.remove();
-      markerState.state = markerState.state === false ? true : null;
-    });
+    tile.addEventListener('click', () => tileClickHandler(tile));
+    tile.addEventListener('touchstart', () => tileClickHandler(tile));
   }
+}
+
+function tileClickHandler(tile) {
+  if (markerState.state === null) return;
+  if (tile.classList.contains('disabled')) return;
+  else if (markerState.state === false) {
+    const knightImg = document.createElement('img');
+    knightImg.src = knightIcon;
+    knightImg.id = 'knight--img';
+    knightImg.classList.add('board-icon');
+    tile.appendChild(knightImg);
+    tile.classList.add('disabled');
+    markerState.start = tile;
+  } else if (markerState.state === true) {
+    const finishImg = document.createElement('img');
+    finishImg.src = finishIcon;
+    finishImg.id = 'finish-img';
+    finishImg.classList.add('board-icon');
+    tile.appendChild(finishImg);
+    tile.classList.add('disabled');
+    markerState.end = tile;
+  }
+  document.getElementById('location-img').remove();
+  markerState.state = markerState.state === false ? true : null;
 }

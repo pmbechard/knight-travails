@@ -13,21 +13,25 @@ export function getControls() {
   startBtn.disabled = true;
   container.appendChild(startBtn);
   startBtn.addEventListener('click', run);
+  startBtn.addEventListener('touchstart', run);
 
   const resetBtn = document.createElement('button');
   resetBtn.classList.add('btn');
   resetBtn.id = 'reset-btn';
   resetBtn.textContent = 'Reset';
   container.appendChild(resetBtn);
-  resetBtn.addEventListener('click', () => {
-    const tiles = document.querySelectorAll('.tile');
-    for (let tile of tiles) {
-      tile.classList.remove('disabled');
-      tile.innerHTML = '';
-      markerState.state = false;
-      markerState.start = null;
-      markerState.end = null;
-      startBtn.disabled = true;
-    }
-  });
+  resetBtn.addEventListener('click', resetHandler);
+  resetBtn.addEventListener('touchstart', resetHandler);
+}
+
+function resetHandler() {
+  const tiles = document.querySelectorAll('.tile');
+  for (let tile of tiles) {
+    tile.classList.remove('disabled');
+    tile.innerHTML = '';
+    markerState.state = false;
+    markerState.start = null;
+    markerState.end = null;
+    document.getElementById('start-btn').disabled = true;
+  }
 }

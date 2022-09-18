@@ -24,4 +24,8 @@ export function getFooter() {
     const modal = document.getElementById('modal-container');
     modal.style.display = 'block';
   });
+  helpImg.addEventListener('touchstart', () => {
+    const modal = document.getElementById('modal-container');
+    modal.style.display = 'block';
+  });
 }
